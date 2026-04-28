@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loaded">Загружено</string>
+    <string name="apply">Применить</string>
+    <string name="vk">ВК</string>
+    <string name="readme">Прочитайте README перед использованием</string>
+    <string name="empty_response">Сервер прислал пустой ответ</string>
+    <string name="start">Старт</string>
+    <string name="stop">Стоп</string>
+    <string name="save">Сохранить</string>
+    <string name="saved">Сохранено</string>
+    <string name="load">Загрузить</string>
+    <string name="autostart">Автозапуск</string>
+    <string name="duplicate_contact_id">ID каждого контакта платформы должен быть уникален</string>
+    <string name="duplicate_prefix">Префиксы должны быть глобально уникальными</string>
+    <!-- ==Kotlin== detected string -->
+    <string name="kotlin_detected">Kotlin обнаружен. Остановка…</string>
+    <string name="jsonexception">JSONException на стороне клиента</string>
+    <!-- Пожалуйста, сделайте отсылку на это достижение в Minecraft, когда будете переводить эту строку -->
+    <string name="double_jsonexception">Невозможное возможно! (двойной JSONException)</string>
+    <!-- Спасибо :) -->
+    <string name="prefix_length">Все префиксы должны быть одной длины</string>
+    <string name="hello_msg">Добро пожаловать в %s!</string>
+    <string name="only_text_msg">Разрешены только текстовые сообщения</string>
+    <string name="length_limit_msg">Максимальная длина сообщения</string>
+    <string name="rate_limit_reached_msg">Достигнуто ограничение на количество сообщений. Попробуйте позже</string>
+    <string name="rate_limit_left_msg">Осталось сообщений за:\n- минуту: %d\n- час: %d\n- день: %d\n- месяц: %d</string>
+    <string name="blocked_msg">Вас заблокировали</string>
+    <string name="unblocked_msg">Вас разблокировали</string>
+    <string name="system_msg">Это системное сообщение. Не отвечайте</string>
+    <string name="no_platform">Ни одна платформа не была настроена</string>
+    <string name="prefix_too_long">Префиксы должны быть короче 15 символов</string>
+    <string name="running">запущен</string>
+    <string name="prefix_slash">Префиксы не должны начинаться с косой черты</string>
+    <string name="stopped">остановлен</string>
+</resources>

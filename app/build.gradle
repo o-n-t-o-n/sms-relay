@@ -1,0 +1,54 @@
+plugins {
+    id "com.android.application"
+}
+
+// Remove ==Kotlin== anyway
+configurations.all {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-common'
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-annotations-jvm'
+}
+
+android {
+    // Disable ==Kotlin== again
+    enableKotlin = false
+    namespace = "by.onton.relay"
+    buildToolsVersion "37.0.0"
+    compileSdk {
+        version = release(37) {
+            minorApiLevel = 0
+        }
+    }
+
+    defaultConfig {
+        applicationId = "by.onton.relay"
+        minSdk = 21
+        targetSdk = 37
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = true
+            shrinkResources = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "IS_DEBUG", "false"
+        }
+        debug {
+            minifyEnabled = false
+            shrinkResources = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}

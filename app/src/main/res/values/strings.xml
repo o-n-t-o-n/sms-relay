@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">SMS Relay</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="readme">Check README before using</string>
+    <string name="empty_response">Server response is empty</string>
+    <string name="telegram" translatable="false">Telegram</string>
+    <string name="vk">VK</string>
+    <string name="enter_config" translatable="false">config.json</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+    <string name="load">Load</string>
+    <string name="loaded">Loaded</string>
+    <string name="apply">Apply</string>
+    <string name="autostart">Autostart</string>
+    <string name="duplicate_contact_id">Each contact\'s ID must be unique per platform</string>
+    <string name="duplicate_prefix">Prefixes must be globally unique</string>
+    <!-- ==Kotlin== detected string -->
+    <string name="kotlin_detected">Kotlin detected. Aborting…</string>
+    <string name="jsonexception">Client-side JSONException</string>
+    <!-- Please reference this Minecraft advancement when localizing this string -->
+    <string name="double_jsonexception">How did we get here? (double JSONException)</string>
+    <!-- Thanks :) -->
+    <string name="prefix_length">Prefix length must be consistent</string>
+    <string name="hello_msg">Welcome to %s!</string>
+    <string name="only_text_msg">Only text messages are allowed</string>
+    <string name="length_limit_msg">Maximum message length</string>
+    <string name="rate_limit_reached_msg">Message rate limit reached. Try again later</string>
+    <string name="rate_limit_left_msg">Remaining messages per:\n- minute: %d\n- hour: %d\n- day: %d\n- month: %d</string>
+    <string name="blocked_msg">You\'ve been blocked</string>
+    <string name="unblocked_msg">You\'ve been unblocked</string>
+    <string name="system_msg">This is a system message. Do not respond</string>
+    <string name="no_platform">No platform was configured</string>
+    <string name="prefix_too_long">Prefixes must be under 15 characters long</string>
+    <string name="running">running</string>
+    <string name="prefix_slash">Prefixes must not start with a slash</string>
+    <string name="stopped">stopped</string>
+</resources>
