@@ -143,7 +143,7 @@ public final class TelegramService extends Service {
                         Contact contact = tg.ids.get(chat.getLong("id"));
 
                         if (contact != null) {
-                            log("prefix:" + contact.prefix + "\nid:" + contact.id + "\ntext:" + text);
+                            log("prefix:" + contact.prefix + "\nid:" + contact.id);
                             tg.onMessage(contact, text, msgId);
                         }
                     }

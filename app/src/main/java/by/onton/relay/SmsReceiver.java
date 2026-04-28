@@ -36,8 +36,6 @@ public final class SmsReceiver extends BroadcastReceiver {
         SmsMessage[] messages = Telephony.Sms.Intents.getMessagesFromIntent(intent);
 
         for (SmsMessage sms : Telephony.Sms.Intents.getMessagesFromIntent(intent)) {
-            Log.w(TAG, "onReceive: " + sms.getDisplayOriginatingAddress());
-            Log.w(TAG, "onReceive: " + sms.getDisplayMessageBody());
             new Thread(() -> this.processMessage(context, sms)).start();
         }
     }
@@ -45,7 +43,6 @@ public final class SmsReceiver extends BroadcastReceiver {
     private void processMessage(Context context, SmsMessage sms) {
         String number, text, prefix;
         number = sms.getDisplayOriginatingAddress();
-        Log.w(TAG, number);
 
         if (!number.equals(Config.number))
             return;

@@ -54,7 +54,7 @@ public final class Http {
             }
             url = new URL(urlString + query.toString());
         }
-        Log.d(TAG, "request: " + url.toString());
+        Log.d(TAG, "request: " + url.toString().substring(0, 40) + '…');
         HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
 
         con.setRequestMethod("GET");

@@ -149,7 +149,7 @@ public final class VkService extends Service {
                         Contact contact = vk.ids.get(message.getLong("peer_id"));
 
                         if (contact != null) {
-                            log("prefix:" + contact.prefix + "\nid:" + contact.id + "\ntext:" + text);
+                            log("prefix:" + contact.prefix + "\nid:" + contact.id);
                             vk.onMessage(contact, text, msgId);
                         }
                     }
