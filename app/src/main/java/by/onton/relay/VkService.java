@@ -103,8 +103,7 @@ public final class VkService extends Service {
 
     long duration = 1000, lastMessageTime = System.currentTimeMillis();
     private void botLoop() {
-        log(getString(R.string.vk)
-                + ' ' + getString(R.string.running));
+        log(getString(R.string.vk) + ' ' + getString(R.string.running));
 
         while (running) {
             try {
@@ -164,9 +163,7 @@ public final class VkService extends Service {
             }
         }
 
-        log(getString(R.string.vk) + ' '
-                + getString(R.string.stopped) + ' '
-                + System.currentTimeMillis());
+        log(getString(R.string.vk) + ' ' + getString(R.string.stopped));
     }
 
     @Override
