@@ -88,6 +88,8 @@ public final class Http {
 
         input.close();
 
+        Log.d(TAG, "response: " + responseText);
+
         if (responseText.isEmpty())
             return response;
 

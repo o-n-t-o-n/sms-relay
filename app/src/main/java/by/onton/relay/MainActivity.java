@@ -39,7 +39,9 @@ public final class MainActivity extends Activity {
             TAG = "relay",
             CONFIG_JSON = "config.json";
 
+    private static volatile boolean enableVk = false;
     private EditText configEditText;
+    private Button startVk;
 
     //  Detect ==Kotlin==
     private boolean findKotlin() {
@@ -174,13 +176,20 @@ public final class MainActivity extends Activity {
             TelegramService.bot = new TelegramBot();
         if (Config.vk != null) {
             VkService.bot = new VkBot();
-            try {
-                if (!VkService.bot.init())
-                    Config.vk = null;
-            } catch (Exception e) {
-                Log.e(TAG, "applyConfig", e);
-                Config.vk = null;
-            }
+            new Thread(() -> {
+                try {
+                    enableVk = VkService.bot.init();
+                    Log.e(TAG, "applyConfig: " + enableVk);
+                }
+                catch (Exception e) {
+                    Log.e(TAG, "applyConfig", e);
+                    enableVk = false;
+                }
+                if (context instanceof Activity) {
+                    Activity activity = ((Activity) context);
+                    activity.runOnUiThread(() -> activity.findViewById(R.id.startVk).setEnabled(enableVk));
+                }
+            }).start();
         }
     }
 
@@ -188,7 +197,7 @@ public final class MainActivity extends Activity {
         Button startTg = findViewById(R.id.startTg);
         startTg.setEnabled(false);
 
-        Button startVk = findViewById(R.id.startVk);
+        startVk = findViewById(R.id.startVk);
         startVk.setEnabled(false);
 
         String toast = "";
@@ -199,7 +208,7 @@ public final class MainActivity extends Activity {
             if (!configString.isEmpty())
                 saveConfig(true, new JSONObject(configString).toString().getBytes(UTF_8));
 
-            applyConfig(view.getContext(), true);
+            applyConfig(this, true);
 
             Log.d(TAG, "lengthLimitMsg: " + Config.Defaults.lengthLimitMsg);
 
@@ -210,7 +219,7 @@ public final class MainActivity extends Activity {
 
             if (Config.vk != null) {
                 toast += getString(R.string.vk) + '\n';
-                startVk.setEnabled(true);
+                startVk.setEnabled(enableVk);
             }
 
             if (Config.tg == Config.vk)
