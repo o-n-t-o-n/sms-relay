@@ -25,7 +25,7 @@ public final class VkService extends Service {
     private static final byte ID = Config.PLATFORM_VK;
     static VkBot bot;
 
-    private final long owner = vk.logId;
+    private long owner;
     private boolean running = false;
 
     private PowerManager.WakeLock wakeLock;
@@ -48,10 +48,12 @@ public final class VkService extends Service {
         if (vk == null) {
             try {
                 MainActivity.applyConfig(this, true);
+
             }
             catch (Exception e) {
                 throw new RuntimeException(e);
             }
+            owner = vk.logId;
         }
 
         createNotificationChannel();
