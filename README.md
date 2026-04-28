@@ -1,6 +1,6 @@
 # SMS Relay
 
-A minimalist self-contained Android app for forwarding Telegram and VK messages over SMS and vice versa.
+A minimalist self-contained **barely working** Android app for forwarding Telegram and VK messages over SMS and vice versa.
 
 [![Unstable](https://img.shields.io/badge/Stability-Unstable-yellow.svg)](http://github.com/badges/stability-badges)
 [![GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
