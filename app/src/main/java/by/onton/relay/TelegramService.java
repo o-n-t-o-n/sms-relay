@@ -102,8 +102,7 @@ public final class TelegramService extends Service {
     long duration = 1000, lastMessageTime = System.currentTimeMillis();
     private void botLoop() {
         log(getString(R.string.telegram)
-                + ' ' + getString(R.string.running)
-                + ' ' + System.currentTimeMillis());
+                + ' ' + getString(R.string.running));
 
         while (running) {
             try {
