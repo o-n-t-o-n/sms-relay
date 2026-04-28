@@ -67,7 +67,7 @@ Use this template to write your own configuration:
     "number": "<Target phone number>",
 
     "tgToken": "<Telegram bot token>",
-    "tgOwn": 0,
+    "tgLogId": 0,
     "tgContacts": [
         {
             "prefix": "<SMS prefix>",
@@ -82,7 +82,7 @@ Use this template to write your own configuration:
     ],
 
     "vkToken": "<VK bot token>",
-    "vkOwn": 0,
+    "vkLogId": 0,
     "vkContacts": [
         {
             "prefix": "<SMS prefix>",
